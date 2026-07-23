@@ -67,7 +67,7 @@ jobs:
         env:
           FRONTEND_HEALTH_URL: ${{ secrets.FRONTEND_HEALTH_URL }}
         run: |
-          TARGETS="${FRONTEND_HEALTH_URL} https://bn.vercel.app/"
+          TARGETS="${FRONTEND_HEALTH_URL} https://starlinddata.vercel.app/"
           for i in $(seq 1 30); do
             for target in $TARGETS; do
               if [ -z "$target" ]; then

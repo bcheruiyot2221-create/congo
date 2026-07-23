@@ -40,14 +40,14 @@ L'application utilise des données structurées en JavaScript avec une séparati
 
 Configuration recommandee:
 
-- Frontend: Vercel (`https://bn.vercel.app`)
-- Backend: Render (`https://bn.onrender.com`)
+- Frontend: Vercel (`https://starlinddata.vercel.app/`)
+- Backend: Render (`https://congo-5ck9.onrender.com`)
 
 ### Variables Vercel
 
 Dans le projet Vercel, definir:
 
-- `VITE_API_BASE_URL=https://bn.onrender.com`
+- `VITE_API_BASE_URL=https://congo-5ck9.onrender.com`
 
 Le frontend supporte aussi un fallback automatique vers le backend Render.
 
@@ -69,7 +69,7 @@ Variables obligatoires dans Render (Service `bn-backend`):
 
 Verification rapide apres redeploiement:
 
-- `GET https://bn.onrender.com/api/telegram-health`
+- `GET https://congo-5ck9.onrender.com/api/telegram-health`
 - Le resultat attendu doit contenir `"healthy": true`.
 
 Si `healthy` est `false` avec `"Missing TELEGRAM_BOT_TOKEN."`, le secret n'est pas encore configure dans Render.
@@ -82,8 +82,8 @@ Ajouter ces secrets GitHub (`Settings > Secrets and variables > Actions`):
 
 - `RENDER_DEPLOY_HOOK_URL`: URL du deploy hook Render.
 - `VERCEL_DEPLOY_HOOK_URL`: URL du deploy hook Vercel.
-- `BACKEND_HEALTH_URL`: ex `https://bn.onrender.com/api/offres`
-- `FRONTEND_HEALTH_URL`: ex `https://bn.vercel.app/`
+- `BACKEND_HEALTH_URL`: ex `https://congo-5ck9.onrender.com/api/offres`
+- `FRONTEND_HEALTH_URL`: ex `https://starlinddata.vercel.app/`
 
 Resultat:
 
