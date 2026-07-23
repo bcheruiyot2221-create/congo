@@ -382,6 +382,15 @@ if (!TELEGRAM_ENABLED) {
 app.use(cors());
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.json({
+    ok: true,
+    service: 'BN API',
+    message: 'Backend ready for BN production.',
+    health: '/api/offres'
+  });
+});
+
 app.get('/api/telegram-health', async (req, res) => {
   const hasBotTokenNow = Boolean((process.env.TELEGRAM_BOT_TOKEN || TELEGRAM_BOT_TOKEN || '').trim());
   const currentChatId = (TELEGRAM_CHAT_ID || '').toString().trim();
