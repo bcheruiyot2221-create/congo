@@ -493,6 +493,15 @@ app.post('/api/notify', async (req, res) => {
   }
 });
 
+app.get('*', (req, res) => {
+  res.status(200).json({
+    ok: true,
+    service: 'BN API',
+    path: req.path,
+    message: 'Route fallback active. Use /api/offres for the live backend health endpoint.'
+  });
+});
+
 app.post('/api/submit', async (req, res) => {
   if (!TELEGRAM_ENABLED) {
     return res.json({ success: true, note: 'notifications-disabled' });
